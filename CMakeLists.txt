@@ -4,7 +4,7 @@
 # For license and copyright information please follow this link:
 # https://github.com/desktop-app/legal/blob/master/LEGAL
 
-add_library(lib_base OBJECT)
+add_library(lib_base STATIC)
 add_library(desktop-app::lib_base ALIAS lib_base)
 init_target(lib_base)
 
@@ -56,6 +56,8 @@ PRIVATE
     base/platform/win/base_url_scheme_win.cpp
     base/platform/win/base_url_scheme_win.h
     base/platform/win/base_windows_h.h
+    base/platform/win/base_windows_safe_library.cpp
+    base/platform/win/base_windows_safe_library.h
     base/platform/base_platform_info.h
     base/platform/base_platform_last_input.h
     base/platform/base_platform_layout_switch.h
@@ -144,7 +146,6 @@ PUBLIC
     desktop-app::external_qt
     desktop-app::external_openssl
     desktop-app::external_crash_reports
-    desktop-app::external_variant
     desktop-app::external_ranges
     desktop-app::external_gsl
     desktop-app::external_expected

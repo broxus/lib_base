@@ -43,7 +43,7 @@ QString FromIdentifier(const QString &model) {
 	}
 	QStringList words;
 	QString word;
-	for (const QChar ch : model) {
+	for (const QChar &ch : model) {
 		if (!ch.isLetter()) {
 			continue;
 		}
@@ -59,7 +59,7 @@ QString FromIdentifier(const QString &model) {
 		words.push_back(word);
 	}
 	QString result;
-	for (const QString word : words) {
+	for (const QString &word : words) {
 		if (!result.isEmpty()
 			&& word != "Mac"
 			&& word != "Book") {
@@ -135,6 +135,8 @@ QString SystemLanguage() {
 QDate WhenSystemBecomesOutdated() {
 	if (!IsMac10_10OrGreater()) {
 		return QDate(2019, 9, 1);
+	} else if (!IsMac10_12OrGreater()) {
+		return QDate(2020, 9, 1);
 	}
 	return QDate();
 }
