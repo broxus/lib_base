@@ -22,6 +22,9 @@
 #include <functional>
 #include <gsl/gsl>
 
+#include "boost/multiprecision/cpp_int.hpp"
+namespace mp = boost::multiprecision;
+
 namespace func = base::functors;
 
 using gsl::not_null;
@@ -43,6 +46,10 @@ using int32 = qint32;
 using uint32 = quint32;
 using int64 = qint64;
 using uint64 = quint64;
+using int128 = mp::int128_t;
+using unt128 = mp::uint128_t;
+using int256 = mp::int256_t;
+using uint256 = mp::uint256_t;
 using float32 = float;
 using float64 = double;
 
